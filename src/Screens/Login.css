@@ -1,0 +1,80 @@
+.login-cont{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-cont .title{
+    width: 90%;
+    height: 20%;
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    font-size: xx-large;
+    
+}
+
+.login-cont .login-sec{
+    flex: 1;
+    width: 100%;
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.login-cont .logo-cont{
+    height: 30%;
+    width: 30%;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.login-cont .login-form{
+    height: 50%;
+    width: 20%;
+    /* background-color: lightgreen; */
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.login-form .form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;   
+}
+
+.form label, .form input{
+    margin: 5px 0px;
+}
+
+.form input{
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid lightgrey;
+}
+
+.login-sec .chat-cont{
+    flex: 1;
+    width: 90%;
+    /* background-color: lightsalmon; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chat-cont .chat-support{
+    height: 40%;
+    width: 15%;
+    border: none;
+    border-radius: 10px;
+    background-color: lightskyblue;
+}
