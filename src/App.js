@@ -3,6 +3,7 @@ import Accounts from './Screens/Accounts';
 import CompanyProfile from './Screens/CompanyProfile';
 import CreateAccount from './Screens/CreateAccount';
 import Login from './Screens/Login';
+import Order from './Screens/Order';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         {/* <Login></Login> */}
         {/* <CompanyProfile></CompanyProfile> */}
         {/* <Accounts></Accounts> */}
-        <CreateAccount></CreateAccount>
+        {/* <CreateAccount></CreateAccount> */}
+        <Order></Order>
     </div>
   );
 }
