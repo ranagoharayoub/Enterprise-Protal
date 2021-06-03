@@ -1,0 +1,42 @@
+.create-account{
+    height: 100vh;
+    width: 100vw;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.create-account .sidecard{
+    height: 90%;
+    width: 20%;
+    /* background-color: wheat; */
+    display: flex;
+}
+
+.create-account .main{
+    
+    height: 100%;
+    width: 75%;
+    /* background-color: yellowgreen; */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+.main .title{
+    font-size: xx-large;
+}
+
+.main .form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main .form input{
+    width: 30%;
+    border: 1px solid lightgray;
+    padding-left: 2px;
+}

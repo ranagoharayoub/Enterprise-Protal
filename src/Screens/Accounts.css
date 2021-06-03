@@ -40,6 +40,7 @@
     border: 1px solid lightgray;
     border-radius: 10px;
     padding: 0px 10px;
+    font-size: large;
 }
 
 .search .create-account{
