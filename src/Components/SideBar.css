@@ -12,8 +12,6 @@
 .dashboard, .accounts, .order-mng, .settings{
     margin: 15px 40px;
     padding: 0px 10px;
-    border-left: 3px solid black;
-    font-weight: bold;
     cursor: pointer;
 }
 
