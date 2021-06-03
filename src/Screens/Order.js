@@ -9,7 +9,7 @@ function Order() {
             <div className='side-card'>
                 <SideBar></SideBar>
             </div>
-            <div className='main'>
+            <div className='main' style={{display:'flex'}}>
                 <div className='title'>New Limondae/Fuel/Food Order</div>
                 <div style={{margin: '10px 0px', fontWeight: 'bold'}}>Selected Employee:</div>
                 <FormGroup>
@@ -21,6 +21,36 @@ function Order() {
                 <div style={{display:'flex' , justifyContent:'flex-end', width:'90%'}}>
                     <Button style={{width: '100px', marginTop:'10px'}} variant="contained" color="primary"> Next </Button>
                 </div>
+                <Chat></Chat>
+            </div>
+            <div className='main' style={{display:'none'}}>
+                <div className='title'>Verify and Submit</div>
+                <div style={{margin: '20px 0px', fontWeight:'bold'}}>New Gift Order</div>
+                <div style={{display: 'flex', width:'50%', padding: '10px 10px' ,justifyContent:'space-between'}}>
+                    <div>Number of Employees</div>
+                    <div style={{fontWeight:'bold'}}>$45</div>
+                </div>
+                <div style={{display: 'flex', width:'50%', padding: '10px 10px' ,justifyContent:'space-between'}}>
+                    <div>Amount per Employee</div>
+                    <div style={{fontWeight:'bold'}}>$45</div>
+                </div>
+                <div style={{display: 'flex', width:'50%', padding: '10px 10px' ,justifyContent:'space-between'}}>
+                    <div>Fees</div>
+                    <div style={{fontWeight:'bold'}}>$45</div>
+                </div>
+                <hr></hr>
+                <div style={{display: 'flex', width:'50%', padding: '10px 10px' ,justifyContent:'space-between'}}>
+                    <div>Total Amount</div>
+                    <div style={{fontWeight:'bold'}}>$45</div>
+                </div>
+                <Chat></Chat>
+            </div>
+            <div className='main' style={{display:'none'}} >
+                <Button style={{marginTop:"50px", width:'30%'}} variant="contained" color="primary">Submit A New Order</Button>
+                <div style={{margin: '20px 0px', fontWeight:'bold'}}>In Process Orders</div>
+                <div></div>
+                <div style={{margin: '20px 0px', fontWeight:'bold'}}>Completed Orders</div>
+                <div></div>
                 <Chat></Chat>
             </div>
         </div>
