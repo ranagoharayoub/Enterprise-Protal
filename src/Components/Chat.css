@@ -1,0 +1,17 @@
+.chat-cont{
+    flex: 1;
+    width: 90%;
+    /* background-color: lightsalmon; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.chat-cont .chat-support{
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: lightskyblue;
+    margin-bottom: 50px;
+}

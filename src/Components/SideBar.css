@@ -1,0 +1,19 @@
+.sidebar-cont{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px 0px;
+    border: 1px solid lightgray;
+}
+
+.dashboard, .accounts, .order-mng, .settings{
+    margin: 15px 40px;
+    padding: 0px 10px;
+    border-left: 3px solid black;
+    font-weight: bold;
+    cursor: pointer;
+}
+

@@ -63,18 +63,3 @@
     border: 1px solid lightgrey;
 }
 
-.login-sec .chat-cont{
-    flex: 1;
-    width: 90%;
-    /* background-color: lightsalmon; */
-    display: flex;
-    justify-content: flex-end;
-}
-
-.chat-cont .chat-support{
-    height: 40%;
-    width: 15%;
-    border: none;
-    border-radius: 10px;
-    background-color: lightskyblue;
-}

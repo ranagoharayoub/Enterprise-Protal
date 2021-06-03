@@ -1,4 +1,5 @@
 import React from 'react'
+import Chat from '../Components/Chat'
 import './Login.css'
 
 function Login() {
@@ -19,9 +20,7 @@ function Login() {
                         <input type='password'></input>
                     </form>
                 </div>
-                <div className='chat-cont'>
-                        <button className='chat-support'>Chat Support</button>
-                </div>
+                <Chat></Chat>
             </div>
         </div>
     )
