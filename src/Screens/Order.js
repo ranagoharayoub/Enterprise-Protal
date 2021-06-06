@@ -20,7 +20,7 @@ function Order() {
                 <SideBar></SideBar>
             </div>
             <div className='main' style={first?{display:'flex'}: {display:'none'}} >
-                <Button onClick={()=>{ setsecond(true); setfirst(false)}} style={{marginTop:"50px", width:'30%'}} variant="contained" color="primary">Submit A New Order</Button>
+                <Button onClick={()=>{ setsecond(true); setfirst(false)}} style={{marginTop:"50px", width:'30%',background:'#158baa', color:'white'}} variant="contained">Submit A New Order</Button>
                 <div style={{margin: '20px 0px', fontWeight:'bold'}}>In Process Orders</div>
                 <div></div>
                 <div style={{margin: '20px 0px', fontWeight:'bold'}}>Completed Orders</div>
@@ -44,7 +44,7 @@ function Order() {
                                 <label style={{fontWeight:'bold'}} >Enter Amount Per Employee</label>
                                 <input required style={{marginLeft:'20px'}} type='number'></input>
                             </fieldset>
-                            <Button type='submit' style={{width: '100px', marginTop:'20px'}} variant="contained" color="primary">Next</Button>
+                            <Button type='submit' style={{width: '100px', marginTop:'20px', background:'#158baa', color:'white'}} variant="contained" >Next</Button>
                         </form>
                     </div>
                     <div className='payment-type'>
@@ -71,7 +71,7 @@ function Order() {
                     <FormControlLabel control={<Checkbox></Checkbox>} label='Name' ></FormControlLabel>
                 </FormGroup>
                 <div style={{display:'flex' , justifyContent:'flex-end', width:'90%'}}>
-                    <Button onClick={()=>{ setthird(false); setfourth(true)}} style={{width: '100px', marginTop:'10px'}} variant="contained" color="primary"> Next </Button>
+                    <Button onClick={()=>{ setthird(false); setfourth(true)}} style={{width: '100px', marginTop:'10px', background:'#158baa', color:'white'}} variant="contained" > Next </Button>
                 </div>
                 <Chat></Chat>
             </div>
@@ -95,7 +95,7 @@ function Order() {
                     <div>Total Amount</div>
                     <div style={{fontWeight:'bold'}}>$45</div>
                 </div>
-                <Button onClick={()=>{ setfirst(true); setthird(false)}} style={{width: '100px', marginTop:'10px'}} variant="contained" color="primary">Submit</Button>
+                <Button onClick={()=>{ setfirst(true); setthird(false)}} style={{width: '100px', marginTop:'10px', background:'#158baa', color:'white'}} variant="contained" >Submit</Button>
                 <Chat></Chat>
             </div>
         </div>

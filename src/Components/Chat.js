@@ -5,7 +5,7 @@ import './Chat.css'
 function Chat() {
     return (
         <div className='chat-cont'>
-            <Button className='chat-support' variant="contained" color="secondary" href="#contained-buttons">Chat Support</Button>
+            <Button className='chat-support' variant="contained" >Chat Support</Button>
         </div>
     )
 }

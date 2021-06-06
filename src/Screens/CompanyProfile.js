@@ -19,7 +19,7 @@ function CompanyProfile() {
                             <input required type='text'></input>
                             <label>Fiscal ID</label>
                             <input required type='text'></input>
-                            <Button type='submit' style={{width: '100px', marginTop:'20px'}} variant="contained" color="primary">Next</Button>
+                            <Button type='submit' style={{width: '100px', marginTop:'20px', background:'#158baa', color:'white'}} variant="contained" >Next</Button>
                         </form>
                     </div>
                     {/* <div className='last'>

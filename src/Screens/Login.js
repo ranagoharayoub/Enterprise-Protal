@@ -19,7 +19,7 @@ function Login({login}) {
                         <input required type='email'></input>
                         <label>Password</label>
                         <input required type='password'></input>
-                        <Button type='submit' style={{width: '100px', marginTop:'20px'}} variant="contained" color="primary">Log In</Button> 
+                        <Button type='submit' style={{width: '100px', marginTop:'20px', background:'#158baa', color:'white'}} variant="contained">Log In</Button> 
                     </form>
                 </div>
                 <Chat></Chat>
