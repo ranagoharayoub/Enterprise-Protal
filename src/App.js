@@ -4,6 +4,7 @@ import CompanyProfile from './Screens/CompanyProfile';
 import CreateAccount from './Screens/CreateAccount';
 import Login from './Screens/Login';
 import Order from './Screens/Order';
+import Dashboard from './Screens/Dashboard';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,6 +13,7 @@ import {
 } from "react-router-dom";
 import { useState } from 'react';
 
+
 function App() {
     const [isLoggedIn, setisLoggedIn] = useState(false)
 
@@ -19,10 +21,11 @@ function App() {
     <div className="App">
       <Router>
         {
-          isLoggedIn? <Redirect to = '/accounts'></Redirect> : <Redirect to='/login'></Redirect>
+          isLoggedIn? <Redirect to = '/'></Redirect> : <Redirect to='/login'></Redirect>
         }
         <Switch>
           <Route path='/login'><Login login={()=> setisLoggedIn(true)}></Login></Route>
+          <Route exact path='/'><Dashboard></Dashboard></Route>
           <Route path='/accounts'><Accounts></Accounts></Route>
           <Route path='/newaccount'> <CreateAccount></CreateAccount></Route>
           <Route path='/order'><Order></Order></Route>

@@ -11,7 +11,7 @@ function Login({login}) {
             </div>
             <div className='login-sec'>
                 <div className='logo-cont'>
-                    LOGO
+                    
                 </div>
                 <div className='login-form'>
                     <form className='form'>

@@ -29,12 +29,11 @@
 
 .login-cont .logo-cont{
     height: 30%;
-    width: 30%;
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: x-large;
+    width: 15%;
+    background-image: url('../img/logo.jpeg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .login-cont .login-form{
