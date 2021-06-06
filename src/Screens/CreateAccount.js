@@ -25,7 +25,7 @@ function CreateAccount() {
                     <input required type='email'></input>
                     <div style={{fontSize: 'small', marginTop: '15px'}}>Account to be created</div>
                     <FormGroup aria-required='true' >
-                        <FormControlLabel  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label={<span style={{fontSize: 'small'}}>Carte Limonade</span> } ></FormControlLabel>
+                        <FormControlLabel control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label={<span style={{fontSize: 'small'}}>Carte Limonade</span> } ></FormControlLabel>
                         <FormControlLabel control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label={<span style={{fontSize:'small'}}>Limonade Food</span>}></FormControlLabel>
                         <FormControlLabel control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label= {<span style={{fontSize:'small'}}>Limonade Fuel</span>}   ></FormControlLabel>
                     </FormGroup>

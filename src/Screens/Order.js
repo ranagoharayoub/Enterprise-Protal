@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import Chat from '../Components/Chat'
 import SideBar from '../Components/SideBar'
 import './Order.css'
+
+
 function Order() {
     const [first, setfirst] = useState(true)
     const [second, setsecond] = useState(false)
@@ -33,7 +35,7 @@ function Order() {
                     <div className='food-type'>
                         <form onSubmit={(e)=> {e.preventDefault(); setthird(true); setsecond(false)}}>
                             <FormGroup>
-                                <FormControlLabel onClick={()=> setchoice('Food')}  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label={<span style={{fontSize: 'small'}}>Limonada Food </span> } ></FormControlLabel>
+                                <FormControlLabel  onClick={()=> setchoice('Food')}  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label={<span style={{fontSize: 'small'}}>Limonada Food </span> } ></FormControlLabel>
                                 <img src='/img/food.png' width='400px' alt='img'></img>
                                 <FormControlLabel onClick={()=> setchoice('Carte')} control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label={<span style={{fontSize:'small'}}>Carte Limonade </span>}></FormControlLabel>
                                 <img src='/img/cart.png'  width='400px' alt='img'></img>
@@ -69,7 +71,7 @@ function Order() {
                     <FormControlLabel control={<Checkbox></Checkbox>} label='Name' ></FormControlLabel>
                     <FormControlLabel control={<Checkbox></Checkbox>} label='Name' ></FormControlLabel>
                     <FormControlLabel control={<Checkbox></Checkbox>} label='Name' ></FormControlLabel>
-                </FormGroup>
+                </FormGroup> 
                 <div style={{display:'flex' , justifyContent:'flex-end', width:'90%'}}>
                     <Button onClick={()=>{ setthird(false); setfourth(true)}} style={{width: '100px', marginTop:'10px', background:'#158baa', color:'white'}} variant="contained" > Next </Button>
                 </div>
@@ -95,7 +97,7 @@ function Order() {
                     <div>Total Amount</div>
                     <div style={{fontWeight:'bold'}}>$45</div>
                 </div>
-                <Button onClick={()=>{ setfirst(true); setthird(false)}} style={{width: '100px', marginTop:'10px', background:'#158baa', color:'white'}} variant="contained" >Submit</Button>
+                <Button onClick={()=>{ setfirst(true); setfourth(false)}} style={{width: '100px', marginTop:'10px', background:'#158baa', color:'white'}} variant="contained" >Submit</Button>
                 <Chat></Chat>
             </div>
         </div>
