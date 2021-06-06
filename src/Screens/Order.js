@@ -9,6 +9,11 @@ function Order() {
     const [second, setsecond] = useState(false)
     const [third, setthird] = useState(false)
     const [fourth, setfourth] = useState(false)
+
+    const [choice, setchoice] = useState(null)
+
+
+
     return (
         <div className='order-cont'>
             <div className='side-card'>
@@ -26,19 +31,21 @@ function Order() {
                 <div className='title'>New Order</div>
                 <div className='main-content'>
                     <div className='food-type'>
-                        <FormGroup >
-                            <FormControlLabel  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label={<span style={{fontSize: 'small'}}>Limondae Food </span> } ></FormControlLabel>
-                            <img src='/img/food.png' width='400px' alt='img'></img>
-                            <FormControlLabel control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label={<span style={{fontSize:'small'}}>Carte Limonade </span>}></FormControlLabel>
-                            <img src='/img/cart.png'  width='400px' alt='img'></img>
-                            <FormControlLabel control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label= {<span style={{fontSize:'small'}}>Limondae Fuel</span>}   ></FormControlLabel>
-                            <img src='/img/fuel.png'  width='400px' alt='img'></img>
-                        </FormGroup>
-                        <form style={{marginTop:'20px'}}>
-                            <label style={{fontWeight:'bold'}} >Enter Amount Per Employee</label>
-                            <input style={{marginLeft:'20px'}} type='number'></input>
+                        <form onSubmit={(e)=> {e.preventDefault(); setthird(true); setsecond(false)}}>
+                            <FormGroup>
+                                <FormControlLabel onClick={()=> setchoice('Food')}  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label={<span style={{fontSize: 'small'}}>Limonada Food </span> } ></FormControlLabel>
+                                <img src='/img/food.png' width='400px' alt='img'></img>
+                                <FormControlLabel onClick={()=> setchoice('Carte')} control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label={<span style={{fontSize:'small'}}>Carte Limonade </span>}></FormControlLabel>
+                                <img src='/img/cart.png'  width='400px' alt='img'></img>
+                                <FormControlLabel onClick={()=> setchoice("Fuel")} control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label= {<span style={{fontSize:'small'}}>Limonade Fuel</span>}   ></FormControlLabel>
+                                <img src='/img/fuel.png'  width='400px' alt='img'></img>
+                            </FormGroup>
+                            <fieldset style={{marginTop:'20px', border:'none'}}>
+                                <label style={{fontWeight:'bold'}} >Enter Amount Per Employee</label>
+                                <input required style={{marginLeft:'20px'}} type='number'></input>
+                            </fieldset>
+                            <Button type='submit' style={{width: '100px', marginTop:'20px'}} variant="contained" color="primary">Next</Button>
                         </form>
-                        <Button onClick={() => { setsecond(false) ;setthird(true)}} style={{width: '100px', marginTop:'20px'}} variant="contained" color="primary">Next</Button>
                     </div>
                     <div className='payment-type'>
                         <FormControl component="fieldset">
@@ -55,7 +62,7 @@ function Order() {
             <Chat></Chat>
             </div>
             <div className='main' style={third?{display:'flex'}: {display:'none'}} >
-                <div className='title'>New Limondae/Fuel/Food Order</div>
+                <div className='title'>New Limonade {choice} Order</div>
                 <div style={{margin: '10px 0px', fontWeight: 'bold'}}>Selected Employee:</div>
                 <FormGroup>
                     <FormControlLabel control={<Checkbox></Checkbox>} label='Select All' ></FormControlLabel>

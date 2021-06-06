@@ -14,12 +14,12 @@ function Login({login}) {
                     
                 </div>
                 <div className='login-form'>
-                    <form className='form'>
+                    <form className='form' onSubmit={login} >
                         <label>Email</label>
-                        <input type='email'></input>
+                        <input required type='email'></input>
                         <label>Password</label>
-                        <input type='password'></input>
-                       <Button onClick={login} style={{width: '100px', marginTop:'20px'}} variant="contained" color="primary">Log In</Button> 
+                        <input required type='password'></input>
+                        <Button type='submit' style={{width: '100px', marginTop:'20px'}} variant="contained" color="primary">Log In</Button> 
                     </form>
                 </div>
                 <Chat></Chat>

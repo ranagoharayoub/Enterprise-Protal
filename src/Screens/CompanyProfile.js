@@ -1,3 +1,4 @@
+import { Button } from '@material-ui/core'
 import React from 'react'
 import Chat from '../Components/Chat'
 import SideBar from '../Components/SideBar'
@@ -13,11 +14,12 @@ function CompanyProfile() {
                         Company Profile
                     </div>
                     <div className='form-cont'>
-                        <form className='form'>
+                        <form className='form' onSubmit={e=> e.preventDefault()}>
                             <label>Name</label>
-                            <input type='text'></input>
+                            <input required type='text'></input>
                             <label>Fiscal ID</label>
-                            <input type='text'></input>
+                            <input required type='text'></input>
+                            <Button type='submit' style={{width: '100px', marginTop:'20px'}} variant="contained" color="primary">Next</Button>
                         </form>
                     </div>
                     {/* <div className='last'>
