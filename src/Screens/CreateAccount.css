@@ -41,3 +41,13 @@
     padding-left: 2px;
 }
 
+@media (max-width: 500px) {
+    .create-account .main{
+    
+        padding-left: 0px;
+    }
+    
+    .main .form input{
+        width: 70%;
+    }
+}

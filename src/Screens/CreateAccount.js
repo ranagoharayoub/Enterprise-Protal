@@ -11,10 +11,10 @@ function CreateAccount() {
         const [fail, setfail] = useState(false)
     return (
         <div className='create-account'>
-            <div className='sidecard'>
+            <div  className='sidecard'>
                 <SideBar></SideBar>
             </div>
-            <div className='main'>
+            <div  className='main'>
                 <div className='title'>Create New Account</div>
                 <form className='form' onSubmit={(e)=>{ e.preventDefault(); setsuccess(true); }} >
                     <label>First Name</label>

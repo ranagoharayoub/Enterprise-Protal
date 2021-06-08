@@ -8,7 +8,7 @@ import './Accounts.css'
 function Accounts() {
     return (
         <div className='acoounts-cont'>
-            <div className='side-card'>
+            <div  className='side-card'>
                 <SideBar></SideBar>
             </div>
             <div className='main'>

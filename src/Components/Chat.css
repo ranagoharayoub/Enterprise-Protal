@@ -13,3 +13,9 @@
     background-color: #9adb59;
     color: black;
 }
+
+@media (max-width: 500px) {
+    .chat-cont .chat-support{
+        margin-bottom: 100px;
+    }
+}

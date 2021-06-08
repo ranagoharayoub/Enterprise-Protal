@@ -35,7 +35,7 @@ function Order() {
                 <SideBar></SideBar>
             </div>
             <div className='main' style={first?{display:'flex'}: {display:'none'}} >
-                <Button onClick={()=>{ setsecond(true); setfirst(false)}} style={{marginTop:"50px", width:'30%',background:'#158baa', color:'white'}} variant="contained">Submit A New Order</Button>
+                <Button onClick={()=>{ setsecond(true); setfirst(false)}} style={{marginTop:'50px', width:'fit-content', background:'#185baa', color: 'white'}} variant="contained">Submit A New Order</Button>
                 <div style={{margin: '20px 0px', fontWeight:'bold'}}>In Process Orders</div>
                 <div></div>
                 <div style={{margin: '20px 0px', fontWeight:'bold'}}>Completed Orders</div>
@@ -49,38 +49,38 @@ function Order() {
             </div>
             <div className='main' style={second?{display:'flex'}: {display:'none'}} >
                 <div className='title'>New Order</div>
-                <div className='main-content'>
+                <form  className='main-content'  onSubmit={(e)=> {e.preventDefault(); setthird(true); setsecond(false); setamountPerEmployee(amountPerEmployee)}}>
                     <div className='food-type'>
-                        <form onSubmit={(e)=> {e.preventDefault(); setthird(true); setsecond(false); setamountPerEmployee(amountPerEmployee)}}>
+                        {/* <form onSubmit={(e)=> {e.preventDefault(); setthird(true); setsecond(false); setamountPerEmployee(amountPerEmployee)}}> */}
                             <CheckboxGroup onChange={onCheckboxChange}>
                                 <label>
                                     <Checkbox value="Food" />
                                     Limonade Food
                                 </label>
                                 <br></br>
-                                <img src='/img/food.png' width='400px' alt='img'></img>
+                                <img src='/img/food.png' width='200px' alt='img'></img>
                                 <br></br>
                                 <label>
                                     <Checkbox value="Carte" />
                                     Carte Limonade
                                 </label>
                                 <br></br>
-                                <img src='/img/cart.png'  width='400px' alt='img'></img>
+                                <img src='/img/cart.png'  width='200px' alt='img'></img>
                                 <br></br>
                                 <label>
                                     <Checkbox value="Fuel" />
                                     Limonade Fuel
                                 </label>
                                 <br></br>
-                                <img src='/img/fuel.png'  width='400px' alt='img'></img>
+                                <img src='/img/fuel.png'  width='200px' alt='img'></img>
                             </CheckboxGroup>
                             
                             <fieldset style={{marginTop:'20px', border:'none'}}>
-                                <label style={{fontWeight:'bold'}} >Enter Amount Per Employee</label>
-                                <input value={amountPerEmployee} onChange={e=>setamountPerEmployee(e.target.value)} required style={{marginLeft:'20px'}} type='number'></input>
+                                <label style={{fontWeight:'bold'}} >Enter Amount Per Employee:</label>
+                                <input value={amountPerEmployee} onChange={e=>setamountPerEmployee(e.target.value)} required style={{marginLeft:'0px'}} type='number'></input>
                             </fieldset>
-                            <Button type='submit' style={{width: '100px', marginTop:'20px', background:'#158baa', color:'white'}} variant="contained" >Next</Button>
-                        </form>
+                            {/* <Button type='submit' style={{width: '100px', marginTop:'20px', background:'#158baa', color:'white'}} variant="contained" >Next</Button> */}
+                        {/* </form> */}
                     </div>
                     <div className='payment-type'>
                         <FormControl component="fieldset">
@@ -93,7 +93,9 @@ function Order() {
                             </RadioGroup>
                         </FormControl>
                     </div>
-                </div>
+                    <br></br>
+                    <Button type='submit' style={{width: '100px', height:'50px', background:'#158baa', color:'white'}} variant="contained" >Next</Button>
+                </form>
             <Chat></Chat>
             </div>
             <div className='main' style={third?{display:'flex'}: {display:'none'}} >

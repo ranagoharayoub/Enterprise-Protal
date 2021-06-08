@@ -34,6 +34,7 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    
 }
 
 .login-cont .login-form{
@@ -41,12 +42,12 @@
     width: 20%;
     /* background-color: lightgreen; */
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
+    align-items: center;
+    justify-content: center;
 }
 
 .login-form .form{
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;   
 }
@@ -62,3 +63,16 @@
     border: 1px solid lightgrey;
 }
 
+@media (max-width: 500px) {
+    .login-cont .logo-cont{
+        height: 20%;
+        width: 50%;
+
+    }
+
+    .login-cont .login-form{
+        height: 40%;
+        width: 65%;
+
+    }
+}
