@@ -1,10 +1,10 @@
-import { Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, Snackbar } from '@material-ui/core'
-import { CheckBox, CheckBoxOutlineBlank } from '@material-ui/icons'
+import { Button,  FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Snackbar } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 import React, { useState } from 'react'
 import Chat from '../Components/Chat'
 import SideBar from '../Components/SideBar'
 import './Order.css'
+import { AllCheckerCheckbox, Checkbox , CheckboxGroup } from '@createnl/grouped-checkboxes';
 
 
 function Order() {
@@ -14,9 +14,20 @@ function Order() {
     const [fourth, setfourth] = useState(false)
     const [success, setsuccess] = useState(false)
     const [amountPerEmployee, setamountPerEmployee] = useState('')
-    const [choice, setchoice] = useState(null)
-
-    console.log(document.querySelectorAll('input[type="checkbox"]:checked').length);
+    const [choice, setchoice] = useState([])
+    const [numberOfEmployee, setnumberOfEmployee] = useState()
+    
+        const onCheckboxChange = (checkboxes) => {
+            console.log(checkboxes);
+            setchoice(checkboxes.filter(check => check.checked === true)) 
+        }  
+     
+        const onchangeEmployee = (checkboxes) =>{
+            console.log(checkboxes)
+            var employee = checkboxes.filter(number => number.checked === true)
+            setnumberOfEmployee(employee.length)
+        }
+    console.log(numberOfEmployee)
 
     return (
         <div className='order-cont'>
@@ -31,7 +42,7 @@ function Order() {
                 <div></div>
                 <Snackbar open={success} autoHideDuration={5000} onClose={()=> setsuccess(false)}>
                         <Alert onClose={()=> setsuccess(false)} severity="success">
-                            Account Created Successfully
+                            Order Submitted Successfully
                         </Alert>
                 </Snackbar>
                 <Chat></Chat>
@@ -41,14 +52,29 @@ function Order() {
                 <div className='main-content'>
                     <div className='food-type'>
                         <form onSubmit={(e)=> {e.preventDefault(); setthird(true); setsecond(false); setamountPerEmployee(amountPerEmployee)}}>
-                            <FormGroup>
-                                <FormControlLabel  onClick={()=> setchoice('Food')}  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label={<span style={{fontSize: 'small'}}>Limonada Food </span> } ></FormControlLabel>
+                            <CheckboxGroup onChange={onCheckboxChange}>
+                                <label>
+                                    <Checkbox value="Food" />
+                                    Limonade Food
+                                </label>
+                                <br></br>
                                 <img src='/img/food.png' width='400px' alt='img'></img>
-                                <FormControlLabel onClick={()=> setchoice('Carte')} control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label={<span style={{fontSize:'small'}}>Carte Limonade </span>}></FormControlLabel>
+                                <br></br>
+                                <label>
+                                    <Checkbox value="Carte" />
+                                    Carte Limonade
+                                </label>
+                                <br></br>
                                 <img src='/img/cart.png'  width='400px' alt='img'></img>
-                                <FormControlLabel onClick={()=> setchoice("Fuel")} control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small"  />} checkedIcon={<CheckBox fontSize='small' color='primary' ></CheckBox>} ></Checkbox>} label= {<span style={{fontSize:'small'}}>Limonade Fuel</span>}   ></FormControlLabel>
+                                <br></br>
+                                <label>
+                                    <Checkbox value="Fuel" />
+                                    Limonade Fuel
+                                </label>
+                                <br></br>
                                 <img src='/img/fuel.png'  width='400px' alt='img'></img>
-                            </FormGroup>
+                            </CheckboxGroup>
+                            
                             <fieldset style={{marginTop:'20px', border:'none'}}>
                                 <label style={{fontWeight:'bold'}} >Enter Amount Per Employee</label>
                                 <input value={amountPerEmployee} onChange={e=>setamountPerEmployee(e.target.value)} required style={{marginLeft:'20px'}} type='number'></input>
@@ -71,15 +97,30 @@ function Order() {
             <Chat></Chat>
             </div>
             <div className='main' style={third?{display:'flex'}: {display:'none'}} >
-                <div className='title'>New Limonade {choice} Order</div>
+                <div className='title'>New Limonade {choice.map(opt=>opt.value)} Order</div>
                 <div style={{margin: '10px 0px', fontWeight: 'bold'}}>Selected Employee:</div>
                 
-                <FormGroup >
-                    <FormControlLabel  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label='Select All' ></FormControlLabel>
-                    <FormControlLabel  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label='Name 1' ></FormControlLabel>
-                    <FormControlLabel  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label='Name 2' ></FormControlLabel>
-                    <FormControlLabel  control={<Checkbox icon={<CheckBoxOutlineBlank fontSize="small" />} checkedIcon={<CheckBox fontSize="small" color='primary' />} ></Checkbox>} label='Name 3' ></FormControlLabel>
-                </FormGroup> 
+                <CheckboxGroup onChange={onchangeEmployee}>
+                    <label>
+                        <AllCheckerCheckbox />
+                        Select All
+                    </label>
+                    <hr></hr>
+                    <label>
+                        <Checkbox value="tos" />
+                        Name 1
+                    </label>
+                    <label>
+                        <Checkbox value="privacy-policy" />
+                        Name 2
+                    </label>
+                    <label>
+                        <Checkbox value="advertisements" />
+                        Name 3
+                    </label>
+
+                </CheckboxGroup>
+                
                 <div style={{display:'flex' , justifyContent:'flex-end', width:'90%'}}>
                     <Button onClick={()=>{ setthird(false); setfourth(true)}} style={{width: '100px', marginTop:'10px', background:'#158baa', color:'white'}} variant="contained" > Next </Button>
                 </div>
@@ -90,7 +131,7 @@ function Order() {
                 <div style={{margin: '20px 0px', fontWeight:'bold'}}>New Gift Order</div>
                 <div style={{display: 'flex', width:'50%', padding: '10px 10px' ,justifyContent:'space-between'}}>
                     <div>Number of Employees</div>
-                    <div style={{fontWeight:'bold'}}>45</div>
+                    <div style={{fontWeight:'bold'}}>{numberOfEmployee}</div>
                 </div>
                 <div style={{display: 'flex', width:'50%', padding: '10px 10px' ,justifyContent:'space-between'}}>
                     <div>Amount per Employee</div>
@@ -103,7 +144,7 @@ function Order() {
                 <hr></hr>
                 <div style={{display: 'flex', width:'50%', padding: '10px 10px' ,justifyContent:'space-between'}}>
                     <div>Total Amount</div>
-                    <div style={{fontWeight:'bold'}}>$45</div>
+                    <div style={{fontWeight:'bold'}}>${numberOfEmployee*amountPerEmployee+45}</div>
                 </div>
                 <Button onClick={()=>{ setfirst(true); setfourth(false); setsuccess(true)}} style={{width: '100px', marginTop:'10px', background:'#158baa', color:'white'}} variant="contained" >Submit</Button>
                 <Chat></Chat>
