@@ -14,7 +14,7 @@ function Accounts() {
             <div className='main'>
                 <div className='search'>
                     <input className='search-input' type='text'></input>
-                    <Link to='/newaccount'><Button variant="contained" style={{background:'#158baa', color:'white'}} >+ Create New Account</Button></Link>
+                    <Link style={{textDecoration:'none'}} to='/newaccount'><Button variant="contained" style={{background:'#158baa', color:'white'}} >+ Create New Account</Button></Link>
                 </div>
                 <Chat></Chat>
             </div>
